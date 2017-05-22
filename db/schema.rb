@@ -10,10 +10,50 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170522163718) do
+ActiveRecord::Schema.define(version: 20170522175807) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.integer "seller_id"
+    t.integer "buyer_id"
+    t.bigint "equipment_id"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["buyer_id"], name: "index_bookings_on_buyer_id"
+    t.index ["equipment_id"], name: "index_bookings_on_equipment_id"
+    t.index ["seller_id"], name: "index_bookings_on_seller_id"
+  end
+
+  create_table "equipment", force: :cascade do |t|
+    t.string "title"
+    t.string "category"
+    t.integer "longitude"
+    t.integer "latitude"
+    t.integer "price"
+    t.string "country"
+    t.string "city"
+    t.string "postal_code"
+    t.string "street"
+    t.string "building_number"
+    t.string "photo"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_equipment_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "rating"
+    t.text "content"
+    t.bigint "booking_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["booking_id"], name: "index_reviews_on_booking_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -37,4 +77,7 @@ ActiveRecord::Schema.define(version: 20170522163718) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "equipment"
+  add_foreign_key "equipment", "users"
+  add_foreign_key "reviews", "bookings"
 end
