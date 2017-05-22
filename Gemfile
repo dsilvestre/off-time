@@ -29,18 +29,17 @@ end
 
 
 # errors handling
- gem ‘better_errors'
-gem  'binding_of_caller'
+gem 'better_errors'
+gem 'binding_of_caller'
 
 gem 'bootstrap-sass'
-gem  ‘simple_form'
+gem 'simple_form'
 # posrtgresql
 gem 'pg'
-ruby ‘2.3.3'
 gem 'font-awesome-sass'
 gem 'autoprefixer-rails'
 # data securtiy
-gem  ‘figaro'
+gem  'figaro'
 # pictures storing
 gem 'cloudinary'
 gem 'carrierwave', '~> 0.11.2'
