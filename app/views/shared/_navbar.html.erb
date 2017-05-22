@@ -1,33 +1,28 @@
 <div class="navbar-wagon">  <!navbar-wagon-fixed if we want it to be fixed
   <!-- Logo -->
-  <a href="/" class="navbar-wagon-brand">
-    <img src="images/lewagon.png" />
-  </a>
+ <%= link_to "/" , class: "navbar-wagon-brand" do %>
+    <%= image_tag "wave.png" %>
+    <% end %>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <!-- Search form -->
-    <form action="" class="navbar-wagon-search">
-      <input type="text" class="navbar-wagon-search-input" placeholder="Search something">
+    <form action="" class="navbar-wagon-search form-inline">
+      <input type="text" class="navbar-wagon-search-input location-search" placeholder="Anywhere">
+      <input type="text" class="navbar-wagon-search-input time-search" placeholder="Anytime">
       <button type="submit" class="navbar-wagon-search-btn">
         <i class="fa fa-search"></i>
       </button>
     </form>
 
-    <!-- Text link -->
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Contact</a>
+
 
     <!-- Text link -->
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Team</a>
+    <a href="" class="navbar-wagon-item navbar-wagon-link">Rent</a>
 
-    <!-- Notification link-->
-    <a href="" class="navbar-wagon-item navbar-wagon-link">
-      <div class="badge-container">
-        <i class="fa fa-envelope-o"></i>
-        <div class="badge badge-blue">3</div>
-      </div>
-    </a>
+    <!-- Text link -->
+    <a href="" class="navbar-wagon-item navbar-wagon-link">Borrow</a>
 
     <!-- Profile picture and dropdown -->
     <div class="navbar-wagon-item">
@@ -42,7 +37,7 @@
     </div>
 
     <!-- Button (call-to-action) -->
-    <a href="" class="navbar-wagon-item navbar-wagon-button btn">Post stuff</a>
+    <a href="" class="navbar-wagon-item navbar-wagon-button btn">Sign In / Sign Up</a>
   </div>
 
   <!-- Dropdown appearing on mobile only -->
