@@ -28,6 +28,29 @@ group :development, :test do
 end
 
 
-# Debug Gems
-gem "better_errors"
-gem "binding_of_caller"
+# errors handling
+ gem ‘better_errors'
+gem  'binding_of_caller'
+
+gem 'bootstrap-sass'
+gem  ‘simple_form'
+# posrtgresql
+gem 'pg'
+ruby ‘2.3.3'
+gem 'font-awesome-sass'
+gem 'autoprefixer-rails'
+# data securtiy
+gem  ‘figaro'
+# pictures storing
+gem 'cloudinary'
+gem 'carrierwave', '~> 0.11.2'
+# authentication
+gem  'devise'
+# facebook
+gem 'omniauth-facebook'
+# maps
+gem  'geocoder'
+gem 'coffee-rails'
+gem  'gmaps4rails'
+# emails handling
+gem 'letter_opener', group: :development
