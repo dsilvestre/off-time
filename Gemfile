@@ -17,39 +17,31 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 
 group :development, :test do
-  gem 'binding_of_caller'
-  gem 'better_errors'
+# errors handling
+gem 'binding_of_caller'
+gem 'better_errors'
 
-  gem 'pry-byebug'
-  gem 'pry-rails'
-  gem 'spring'
-  gem 'listen', '~> 3.0.5'
-  gem 'spring-watcher-listen', '~> 2.0.0'
+gem 'pry-byebug'
+gem 'pry-rails'
+gem 'spring'
+gem 'listen', '~> 3.0.5'
+gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-
-# errors handling
-gem 'better_errors'
-gem 'binding_of_caller'
-
-gem 'bootstrap-sass'
-gem 'simple_form'
-# posrtgresql
-gem 'pg'
-gem 'font-awesome-sass'
-gem 'autoprefixer-rails'
-# data securtiy
-gem  'figaro'
 # pictures storing
 gem 'cloudinary'
 gem 'carrierwave', '~> 0.11.2'
+
 # authentication
-gem  'devise'
+gem 'devise'
+
 # facebook
 gem 'omniauth-facebook'
+
 # maps
-gem  'geocoder'
+gem 'geocoder'
 gem 'coffee-rails'
-gem  'gmaps4rails'
+gem 'gmaps4rails'
+
 # emails handling
 gem 'letter_opener', group: :development
