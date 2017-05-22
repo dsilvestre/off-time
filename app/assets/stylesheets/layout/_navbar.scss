@@ -7,7 +7,7 @@
   height: 70px;
   padding: 0px 30px;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 /* Optional class to fix the navbar on top */
@@ -28,12 +28,12 @@
 .navbar-wagon-right {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  margin-left: auto;
 }
 
 /* Navbar item */
 .navbar-wagon-item {
-  flex: 0 1 auto;
+  flex: 0 0 50px;
   cursor: pointer;
   padding: 0 20px;
 }
@@ -67,7 +67,7 @@
 
 /* Navbar search form */
 .navbar-wagon-search {
-  flex: 0 1 3000px;
+  flex: 0 1 320px;
   display: flex;
   justify-content: flex-start;
   padding: 0 10px;
@@ -79,12 +79,12 @@
   border: none;
   background: transparent;
   position: absolute;
-  right: 14px;
+  left: 320px;
   top: -2px;
   z-index: 1;
 }
 .navbar-wagon-search-input {
-  flex: 0 1 0px;
+  flex: 0 1 auto;
   transition: all 0.15s ease;
   line-height: 40px;
   font-weight: lighter;
