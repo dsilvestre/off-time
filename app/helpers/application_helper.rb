@@ -14,4 +14,9 @@ module ApplicationHelper
       ""
     end
   end
+
+  def avatar_image_path(user)
+    user.facebook_picture_url || image_path("profile_avatar")
+  end
 end
+
