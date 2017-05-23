@@ -41,11 +41,11 @@
 
 /* Navbar standard link */
 .navbar-wagon-link {
-  color: #616668;
+  color: $gray;
   font-size: 12px;
 }
 .navbar-wagon-link:hover {
-  color: #007090;
+  color: $blue;
   text-decoration: none;
 }
 
@@ -55,30 +55,30 @@
   padding: 0 20px;
   border-radius: 20em;
   line-height: 40px;
-  background-color: #01A7C2;
+  background-color: $turquoise;
   color: white;
   font-size: 14px;
-  border: 2px solid #01A7C2;
+  border: 2px solid $turquoise;
 }
 .navbar-wagon-button:hover {
   color: white;
-  background: #007090;
-  border-color: #007090;
+  background: $blue;
+  border-color: $blue;
 }
 .navbar-wagon-signin-button {
   margin-left: 10px;
   padding: 0 20px;
   border-radius: 20em;
   line-height: 40px;
-  background-color: $yellow;
+  background-color: $lightblue;
   color: white;
   font-size: 14px;
-  border: 2px solid $yellow;
+  border: 2px solid $lightblue;
 }
 .navbar-wagon-signin-button:hover {
   color: white;
-  background: #007090;
-  border-color: #007090;
+  background: $blue;
+  border-color: $blue;
 }
 
 /* Navbar search form */
@@ -91,7 +91,7 @@
 }
 .navbar-wagon-search-btn {
   line-height: 40px;
-  color: #E6E6E6;
+  color: $light_gray;
   border: none;
   background: transparent;
   position: absolute;
@@ -104,34 +104,34 @@
   transition: all 0.15s ease;
   line-height: 40px;
   font-weight: lighter;
-  color: #666666;
-  border: 1px solid #E6E6E6;
+  color: $gray;
+  border: 1px solid $light_gray;
   border-radius: 0px;
   padding: 0 10px;
   font-size: 14px;
   outline: none;
 }
 .navbar-wagon-search-input:focus  {
-  border: 2px solid #CCCCCC;
+  border: 2px solid $silver;
 }
 
 /* Navbar dropdown menu */
 .navbar-wagon-dropdown-menu {
   margin-top: 15px;
-  box-shadow: 1px 1px 4px #E6E6E6;
-  border-color: #E6E6E6;
+  box-shadow: 1px 1px 4px $light_gray;
+  border-color: $light_gray;
 }
 .navbar-wagon-dropdown-menu li > a {
   transition: color 0.3s ease;
   font-weight: lighter !important;
-  color: #999999 !important;
+  color: $gray !important;
   font-size: 15px !important;
   line-height: 22px !important;
   padding: 10px 20px;
 }
 .navbar-wagon-dropdown-menu li > a:hover {
   background: transparent !important;
-  color: black !important;
+  color: $black !important;
 }
 .navbar-wagon-dropdown-menu:before {
   content: ' ';
@@ -142,7 +142,7 @@
   top: -6px;
   background-color: white;
   transform: rotate(45deg);
-  border-left: 1px solid #E6E6E6;
-  border-top: 1px solid #E6E6E6;
+  border-left: 1px solid $light_gray;
+  border-top: 1px solid $light_gray;
 }
 
