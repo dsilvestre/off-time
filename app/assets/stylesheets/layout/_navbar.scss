@@ -29,11 +29,12 @@
   display: flex;
   align-items: center;
   margin-left: auto;
+  justify-content: flex-end;
 }
 
 /* Navbar item */
 .navbar-wagon-item {
-  flex: 0 0 50px;
+  flex: 0 0 100px;
   cursor: pointer;
   padding: 0 20px;
 }
@@ -41,7 +42,7 @@
 /* Navbar standard link */
 .navbar-wagon-link {
   color: #616668;
-  font-size: 14px;
+  font-size: 12px;
 }
 .navbar-wagon-link:hover {
   color: #007090;
@@ -60,6 +61,21 @@
   border: 2px solid #01A7C2;
 }
 .navbar-wagon-button:hover {
+  color: white;
+  background: #007090;
+  border-color: #007090;
+}
+.navbar-wagon-signin-button {
+  margin-left: 10px;
+  padding: 0 20px;
+  border-radius: 20em;
+  line-height: 40px;
+  background-color: $yellow;
+  color: white;
+  font-size: 14px;
+  border: 2px solid $yellow;
+}
+.navbar-wagon-signin-button:hover {
   color: white;
   background: #007090;
   border-color: #007090;

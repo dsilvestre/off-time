@@ -19,25 +19,32 @@
 
   <div class="navbar-wagon-right hidden-xs hidden-sm">
     <!-- Text link -->
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Rent</a>
+    <a href="" class="navbar-wagon-item navbar-wagon-link">Find a board</a>
 
     <!-- Text link -->
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Borrow</a>
+    <a href="" class="navbar-wagon-item navbar-wagon-link">Rent out</a>
 
     <!-- Profile picture and dropdown -->
+    <% if user_signed_in? %>
     <div class="navbar-wagon-item">
       <div class="dropdown">
-        <img src="http://placehold.it/50x50" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+        <%= link_to image_tag("profile_avatar", class:"avatar dropdown-toggle"), "#", data: { toggle: "dropdown" } %>
+
+
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li><a href="#">Profile</a></li>
           <li><a href="#">Dashboard</a></li>
-          <li><a href="#">Log Out</a></li>
+          <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
         </ul>
       </div>
     </div>
+    <% end %>
 
     <!-- Button (call-to-action) -->
-    <a href="" class="navbar-wagon-item navbar-wagon-button btn">Sign In / Sign Up</a>
+    <% if !user_signed_in? %>
+      <%= link_to('Sign In', new_user_session_path, class: "navbar-wagon-item navbar-wagon-signin-button btn") %>
+      <%= link_to('Sign Up', new_user_registration_path, class: "navbar-wagon-item navbar-wagon-button btn") %>
+    <% end %>
   </div>
 
   <!-- Dropdown appearing on mobile only -->
