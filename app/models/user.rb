@@ -12,4 +12,5 @@ class User < ApplicationRecord
   # validates :username, uniqueness: true
   validates :first_name, uniqueness: { scope: :last_name }
 
+  mount_uploader :photo, PhotoUploader
 end

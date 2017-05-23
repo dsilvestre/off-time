@@ -5,4 +5,6 @@ class Equipment < ApplicationRecord
   validates :title, :category, :lognitude, :latitude, :photo, :price, :country, :postal_code, :city, :street, :building_number, presence: true
   validates :title, uniqueness: true
 
+  mount_uploader :photo, PhotoUploader
+
 end
