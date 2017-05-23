@@ -4,7 +4,7 @@
 
 </div>
 <div class="container">
-  <% current_user.equipments.each do |equipment| %>
+  <% current_user.equipment.each do |equipment| %>
     <%= cl_image_tag(equipment_image_path(equipment)) %><%= equipment.title %>
   <% end %>
 
