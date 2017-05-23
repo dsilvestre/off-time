@@ -10,6 +10,8 @@ gem 'redis'
 
 gem 'sass-rails'
 gem 'jquery-rails'
+gem 'momentjs-rails'
+gem 'bootstrap-daterangepicker-rails'
 gem 'uglifier'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'

@@ -3,25 +3,24 @@
     <%= image_tag "wave.png" %>
     <% end %>
 
-  <!-- Right Navigation -->
-    <form action="" class="navbar-wagon-search form-inline">
-      <input type="text" class="navbar-wagon-search-input location-search" placeholder="Anywhere">
-      <input type="text" class="navbar-wagon-search-input time-search" placeholder="Anytime">
-      <button type="submit" class="navbar-wagon-search-btn">
-        <i class="fa fa-search"></i>
-      </button>
 
-    <!-- Search form -->
+  <!-- Search form -->
+  <form action="" class="navbar-wagon-search form-inline">
+    <input type="text" class="navbar-wagon-search-input location-search" placeholder="Location">
+
+    <form action="" class="navbar-wagon-search-input location-search">
+      <input type="text" name="search-daterange" class="navbar-wagon-search-input location-search" placeholder="Choose Dates">
+
     </form>
 
-
+  </form>
 
   <div class="navbar-wagon-right hidden-xs hidden-sm">
     <!-- Text link -->
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Find a board</a>
+    <a href="" class="navbar-wagon-item navbar-wagon-link">Find Board</a>
 
     <!-- Text link -->
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Rent out</a>
+    <a href="" class="navbar-wagon-item navbar-wagon-link">Rent Out</a>
 
     <!-- Profile picture and dropdown -->
     <% if user_signed_in? %>
@@ -42,8 +41,8 @@
 
     <!-- Button (call-to-action) -->
     <% if !user_signed_in? %>
-      <%= link_to('Sign In', new_user_session_path, class: "navbar-wagon-item navbar-wagon-signin-button btn") %>
-      <%= link_to('Sign Up', new_user_registration_path, class: "navbar-wagon-item navbar-wagon-button btn") %>
+    <%= link_to('Login', new_user_session_path, class: "navbar-wagon-item navbar-wagon-signin-button btn") %>
+    <%= link_to('Sign Up', new_user_registration_path, class: "navbar-wagon-item navbar-wagon-button btn") %>
     <% end %>
   </div>
 
@@ -52,10 +51,21 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
+        <li><a href="#">Login</a></li>
+        <li><a href="#">Sign Up</a></li>
+        <li><a href="#">Find Board</a></li>
+        <li><a href="#">Rent Out</a></li>
       </ul>
     </div>
   </div>
 </div>
+
+<% content_for (:js) do %>
+<script type="text/javascript">
+  $(function() {
+    $('input[name="search-daterange"]').daterangepicker();
+});
+  </script>
+  <% end %>
+
+
