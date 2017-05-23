@@ -1,22 +1,22 @@
 class UsersController < ApplicationController
-  def index         # GET /restaurants
+  def index
   end
 
-  def show          # GET /restaurants/:id
+  def show
   end
 
-  def new           # GET /restaurants/new
+  def new
   end
 
-  def create        # POST /restaurants
+  def create
   end
 
-  def edit          # GET /restaurants/:id/edit
+  def edit
   end
 
-  def update        # PATCH /restaurants/:id
+  def update
   end
 
-  def destroy       # DELETE /restaurants/:id
+  def destroy
   end
 end
