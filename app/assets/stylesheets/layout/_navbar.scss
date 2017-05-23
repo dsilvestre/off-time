@@ -64,6 +64,21 @@
   background: #007090;
   border-color: #007090;
 }
+.navbar-wagon-signin-button {
+  margin-left: 10px;
+  padding: 0 20px;
+  border-radius: 20em;
+  line-height: 40px;
+  background-color: $yellow;
+  color: white;
+  font-size: 14px;
+  border: 2px solid $yellow;
+}
+.navbar-wagon-signin-button:hover {
+  color: white;
+  background: #007090;
+  border-color: #007090;
+}
 
 /* Navbar search form */
 .navbar-wagon-search {

@@ -8,8 +8,8 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  validates :first_name, :last_name, :username, :photo, :description, presence: true
-  validates :username, uniqueness: true
-  validates :first_name, uniqueness: { scope: :last_name }
+  validates :first_name, :last_name, presence: true
+  # validates :username, uniqueness: true
+  # validates :first_name, uniqueness: { scope: :last_name }
 
 end
