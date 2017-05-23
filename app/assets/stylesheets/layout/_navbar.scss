@@ -33,7 +33,7 @@
 
 /* Navbar item */
 .navbar-wagon-item {
-  flex: 0 1 auto;
+  flex: 0 1 50px;
   cursor: pointer;
   padding: 0 20px;
 }
@@ -67,7 +67,7 @@
 
 /* Navbar search form */
 .navbar-wagon-search {
-  flex: 0 1 3000px;
+  flex: 0 1 300px;
   display: flex;
   justify-content: flex-start;
   padding: 0 10px;
