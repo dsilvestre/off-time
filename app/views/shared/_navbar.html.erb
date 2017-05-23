@@ -26,7 +26,7 @@
     <% if user_signed_in? %>
     <div class="navbar-wagon-item">
       <div class="dropdown">
-        <%= link_to image_tag("profile_avatar", class:"avatar dropdown-toggle"), "#", data: { toggle: "dropdown" } %>
+        <%= image_tag(avatar_image_path(current_user), class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown") %>
 
 
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
@@ -45,6 +45,8 @@
     <%= link_to('Sign Up', new_user_registration_path, class: "navbar-wagon-item navbar-wagon-button btn") %>
     <% end %>
   </div>
+
+
 
   <!-- Dropdown appearing on mobile only -->
   <div class="navbar-wagon-item hidden-md hidden-lg">
