@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  has_many :equipments
+  has_many :equipment, dependent: :destroy
   has_many :seller_bookings, foreign_key: "seller_id", class_name: "Booking"
   has_many :buyer_bookings, foreign_key: "buyer_id", class_name: "Booking"
 
