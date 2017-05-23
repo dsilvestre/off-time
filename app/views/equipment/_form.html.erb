@@ -1,11 +1,21 @@
-<div class="container text-center">
-<%= simple_form_for [current_user, e] do |f| %>
+<div class="container">
+<%= simple_form_for [current_user, equipment] do |f| %>
 <%= f.error_notification %>
     <div class="form-inputs ">
 
 
-      <%= f.input :title %>
+      <%= f.input :title, :label => "Title", :placeholder => "Great surfboard right at the coast"  %>
+      <%= f.input :category, :collection => @categories, :class => "form-input" %>
+      <%= f.input :price, :label => "Price (€ / day)", :placeholder => "12" %>
+      <%= f.input :country, :as => :string, :label => "Address", :placeholder => "Portugal" %>
+      <%= f.input :postal_code, :label => false, :placeholder => "1170-347" %>
+      <%= f.input :city, :label => false, :placeholder => "Lisbon" %>
+      <%= f.input :street, :label => false, :placeholder => "rua Bernadim Ribeiro" %>
+      <%= f.input :building_number, :label => false, :placeholder => "43"  %>
+
       <%= f.input :photo %>
+      <%= f.input :photo_cache, as: :hidden %>
+
       <%= f.hidden_field :user_id, :value => current_user.id %>
 
 
