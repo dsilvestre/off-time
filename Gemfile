@@ -8,7 +8,7 @@ gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'redis'
 
-gem 'sass-rails'
+gem 'sass-rails', '~> 5.0', '>= 5.0.6'
 gem 'jquery-rails'
 gem 'momentjs-rails'
 gem 'bootstrap-daterangepicker-rails'
@@ -51,3 +51,7 @@ gem 'omniauth-facebook'
 gem 'letter_opener', group: :development
 
 gem 'faker'
+
+group :production do
+  gem 'rails_12factor'
+end
