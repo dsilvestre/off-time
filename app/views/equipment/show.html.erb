@@ -1,8 +1,9 @@
+<div class="container">
 <% content_for(:title_tag) do %>
 <%= @equipment.title %>
 <% end %>
 
-<div class="content-left col-md-6 col-xs-10 col-md-offset-2">
+<div class="content-left col-md-8 col-sm-10 ">
 
   <h2><%= @equipment.title %></h2>
   <br>
@@ -21,16 +22,17 @@
         <td><h5><%= @equipment.category %></h5></td>
 </tr>
 <tr>
-  <td><h4>Price/day:&nbsp;</h4></td>
-        <td><h5><%= @equipment.price %></h5></td>
+  <td><h4>Price:&nbsp;</h4></td>
+        <td><h5><%= @equipment.price%> € / day</h5></td>
 </tr>
 <tr>
 
   <td valign="top"><h4>Location:&nbsp;</h4></td>
-        <td><h5><%= @equipment.street%> <%= @equipment.building_number %>,<br> <%= @equipment.postal_code  %>&nbsp;<%=@equipment.city %>, <br><%= @equipment.country  %>
+        <td><h5><%= @equipment.street%> <%= @equipment.building_number %><br> <%= @equipment.postal_code  %>&nbsp;<%=@equipment.city %> <br><%= @equipment.country  %>
         </h5></td>
 </tr>
 </table>
+</div>
 </div>
 
 

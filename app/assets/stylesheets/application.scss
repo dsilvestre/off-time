@@ -19,5 +19,5 @@
  *= require daterangepicker-bs3
  */
 .content {
-  min-height: calc(100vh - 170px); // 100% - (height navbar (70px) + height footer 70px))
+  min-height: calc(100vh + 170px); // 100% - height navbar (70px) + height footer 70px)
 }
