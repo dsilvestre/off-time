@@ -281,11 +281,8 @@ DEPENDENCIES
   pry-rails
   puma
   rails (= 5.1.1)
-<<<<<<< HEAD
-  rails_12factor
-=======
   rails-assets-underscore!
->>>>>>> 991f253e3838539a0ab0c50d6e141d5ae696a5a1
+  rails_12factor
   redis
   sass-rails (~> 5.0, >= 5.0.6)
   simple_form
