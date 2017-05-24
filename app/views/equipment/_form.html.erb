@@ -5,7 +5,7 @@
 
 
       <%= f.input :title, :label => "Title", :placeholder => "Great surfboard right at the coast"  %>
-      <%= f.input :category, :collection => @categories, :class => "form-input" %>
+      <%= f.input :category, prompt: "(Select from the list)", :collection => @categories, :class => "form-input" %>
       <%= f.input :price, :label => "Price (€ / day)", :placeholder => "12" %>
       <%= f.input :country, :as => :string, :label => "Address", :placeholder => "Portugal" %>
       <%= f.input :postal_code, :label => false, :placeholder => "1170-347" %>
@@ -20,10 +20,10 @@
 
 
     </div>
+    <div class="form-actions">
+      <%= f.button :submit, :class => 'btn btn-medium btn-wrapper', value: 'Add'  %>
+    </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, :class => 'btn btn-medium btn-wrapper', value: 'Add'  %>
-  </div>
 
 <% end %>
 </div>
