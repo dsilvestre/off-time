@@ -1,5 +1,12 @@
 class EquipmentController < ApplicationController
   def index
+    @flats = Equipment.where.not(latitude: nil, longitude: nil)
+
+    @hash = Gmaps4rails.build_markers(@flats) do |equipment, marker|
+      marker.lat equipment.latitude
+      marker.lng equipment.longitude
+      # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
+    end
   end
 
   def show

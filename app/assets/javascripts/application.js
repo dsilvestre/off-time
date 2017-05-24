@@ -4,3 +4,5 @@
 //= require_tree .
 //= require moment
 //= require daterangepicker
+
+//= require gmaps/google
