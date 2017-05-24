@@ -1,18 +1,25 @@
 <div class="container">
 
-  <h1>Hello <%= current_user.first_name %></h1><%= cl_image_tag(user_image_path(current_user)) %>
+  <h1>Hello <%= current_user.first_name %></h1>
+
 
 
 
 </div>
 
 <div class="container">
+<h2>Your listings:</h2>
+<table>
   <% current_user.equipment.each do |equipment| %>
-    <%= cl_image_tag(equipment_image_path(equipment)) %><%= equipment.title %>
+  <tr>
+    <td class="table-field"><%= cl_image_tag(equipment_image_path(equipment)) %></td>
+    <td><h3> <%= equipment.title %></h3>
+    <p><%= equipment.price %> € / day</p>
+    </li></td>
   <% end %>
-
+</table>
 </div>
 
 <div class="container">
-  <%= link_to "Add your surfboard", new_user_equipment_path(current_user) %>
+  <%= link_to "Add your surfboard", new_user_equipment_path(current_user), class: "btn btn-primary" %>
 </div>
