@@ -47,3 +47,5 @@ gem 'gmaps4rails'
 
 # emails handling
 gem 'letter_opener', group: :development
+
+gem 'faker'

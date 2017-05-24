@@ -2,7 +2,10 @@
 
   <h1>Hello <%= current_user.first_name %></h1><%= cl_image_tag(user_image_path(current_user)) %>
 
+
+
 </div>
+
 <div class="container">
   <% current_user.equipment.each do |equipment| %>
     <%= cl_image_tag(equipment_image_path(equipment)) %><%= equipment.title %>

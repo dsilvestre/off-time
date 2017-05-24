@@ -11,6 +11,14 @@ class EquipmentController < ApplicationController
   end
 
   def create
+    @equipment = Equipment.new(equipment_params)
+
+    if @equipment.save
+      redirect_to current_user
+
+    else
+      render :new
+    end
   end
 
   def edit
@@ -20,5 +28,11 @@ class EquipmentController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+
+  def equipment_params
+    params.require(:equipment).permit(:title, :photo, :photo_cache, :price, :country, :city, :postal_code, :street, :building_number, :category)
   end
 end

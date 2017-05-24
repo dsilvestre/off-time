@@ -1,9 +1,9 @@
 <div class="containter">
+    <h1>Add your listing</h1>
+
+  <%= render "form", equipment: @equipment %>
+
   <div class="container">
-    <h1>Add a new listing</h1>
-
-  <%= render "form", e: @equipment %>
-
-    <%= link_to 'Back', current_user %>
+    <%= link_to 'Back to your profile', current_user %>
   </div>
 </div>
