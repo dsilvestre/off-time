@@ -1,7 +1,7 @@
 module ApplicationHelper
   def user_image_path(user)
     if user.photo?
-      cl_image_path user.photo, height: 100, width: 100, crop: :thumb, gravity: :face
+      cl_image_path user.photo, height: 100, width: 100, crop: :fit, gravity: :face
     else
       ""
     end
@@ -16,7 +16,7 @@ module ApplicationHelper
   end
 
   def avatar_image_path(user)
-    user.facebook_picture_url || image_path("profile_avatar")
+    user.facebook_picture_url || current_user.photo || image_path("profile_avatar")
   end
 end
 
