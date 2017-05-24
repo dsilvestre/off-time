@@ -4,9 +4,6 @@
   top: 70px;
   left: 0;
   overflow-y: scroll;
-  height: 100%;
-  width: 100%;
-  background-color: $light_gray;
   }
 
 .content-right {
@@ -15,7 +12,10 @@
   top: 70px;
   right: 0;
   overflow-y: hidden;
-  height: 100%;
-  width: 100%;
-  background-color: $silver;
+}
+
+table {
+  border-right:none;
+  border-bottom:none;
+  border-top: none;
 }
