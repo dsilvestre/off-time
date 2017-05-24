@@ -1,5 +1,14 @@
 class EquipmentController < ApplicationController
+  before_action :set_equipment, only: [:show, :edit, :update, :destroy]
+
   def index
+    @flats = Equipment.where.not(latitude: nil, longitude: nil)
+
+    @hash = Gmaps4rails.build_markers(@flats) do |equipment, marker|
+      marker.lat equipment.latitude
+      marker.lng equipment.longitude
+      # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
+    end
   end
 
   def show
@@ -34,5 +43,9 @@ class EquipmentController < ApplicationController
 
   def equipment_params
     params.require(:equipment).permit(:title, :photo, :photo_cache, :price, :country, :city, :postal_code, :street, :building_number, :category, :user_id)
+  end
+
+  def set_equipment
+    @equipment = Equipment.find(params[:id])
   end
 end

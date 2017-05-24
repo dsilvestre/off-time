@@ -17,6 +17,13 @@ gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
+gem 'geocoder'
+gem 'coffee-rails'
+gem 'gmaps4rails'
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-underscore'
+end
 
 group :development, :test do
 # errors handling
@@ -39,11 +46,6 @@ gem 'devise'
 
 # facebook
 gem 'omniauth-facebook'
-
-# maps
-gem 'geocoder'
-gem 'coffee-rails'
-gem 'gmaps4rails'
 
 # emails handling
 gem 'letter_opener', group: :development

@@ -1,0 +1,17 @@
+.content-left {
+  position: fixed;
+  bottom:0;
+  top: 70px;
+  left: 0;
+  overflow-y: scroll;
+  background-color: $blue;
+  }
+
+.content-right {
+  position: fixed;
+  bottom:0;
+  top: 70px;
+  right: 0;
+  overflow-y: hidden;
+  background-color: $black;
+}
