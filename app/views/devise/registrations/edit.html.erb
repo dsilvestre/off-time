@@ -12,7 +12,13 @@
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
         <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
       <% end %>
-      <%= f.input :photo %>
+      <p><label>Photo</label></p>
+        <%= image_tag current_user.photo, class: "avatar-square"%>
+        <!-- <label> <%= f.check_box :remove_photo %> -->
+      <!-- Remove avatar -->
+    <!-- </label> -->
+
+      <%= f.input :photo, :label => false %>
       <%= f.input :photo_cache, as: :hidden %>
       <%= f.input :description %>
 
