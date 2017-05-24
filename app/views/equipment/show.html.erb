@@ -1,38 +1,40 @@
 <% content_for(:title_tag) do %>
-Surfboard - <%= @equipment.title %>
+<%= @equipment.title %>
 <% end %>
 
-<div class="container">
-  <h3><%= @equipment.title %></h3>
-</div>
+<div class="content-left col-md-6 col-xs-10 col-md-offset-2">
 
-<div class="container">
-  <div class="content-left col-md-8 col-xs-12">
+  <h2><%= @equipment.title %></h2>
+  <br>
+  <br>
 
-    <table>
-    <tr>
-      <td>cl_image_tag(equipment_image_path(@equipment))</td>
-    </tr>
-      <tr>
-        <td><h4>Category:</h4></td>
+
+<table>
+<tr>
+<%= cl_image_tag(equipment_image_path(@equipment)) %>
+<br>
+<br>
+</tr>
+
+<tr>
+    <td><h4>Category:&nbsp;</h4></td>
         <td><h5><%= @equipment.category %></h5></td>
-      </tr>
-      <tr>
-        <td><h4>Price</h4></td>
-        <td><h5><%= @equipment.price  %></h5></td>
-      </tr>
-      <tr>
-      <td><h4>Location</h4></td>
-      <td><span><%= @equipment.street  @equipment.building_number %></span><br><span><%= @equipment.city  %></span><br><span><%= @equipment.country %></span>
-      </td>
-    </tr>
-  </table>
+</tr>
+<tr>
+  <td><h4>Price/day:&nbsp;</h4></td>
+        <td><h5><%= @equipment.price %></h5></td>
+</tr>
+<tr>
+
+  <td valign="top"><h4>Location:&nbsp;</h4></td>
+        <td><h5><%= @equipment.street%> <%= @equipment.building_number %>,<br> <%= @equipment.postal_code  %>&nbsp;<%=@equipment.city %>, <br><%= @equipment.country  %>
+        </h5></td>
+</tr>
+</table>
 </div>
+
+
+
 <div class="content-right col-md-4 hidden-sm">
 
 </div>
-</div>
-
-
-
-
