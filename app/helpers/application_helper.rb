@@ -9,7 +9,7 @@ module ApplicationHelper
 
   def equipment_image_path(equipment)
     if equipment.photo?
-      cl_image_path equipment.photo, height: 300, width: 300, crop: :thumb
+      cl_image_path equipment.photo, height: 150, width: 150, crop: :thumb
     else
       ""
     end
