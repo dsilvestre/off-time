@@ -20,8 +20,17 @@
 
   <div class="navbar-wagon-right hidden-xs hidden-sm">
     <!-- Text link -->
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Find Board</a>
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Rent Out</a>
+
+
+
+
+    <% if !user_signed_in? %>
+       <%= link_to "Rent out", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link"  %>
+       <%= link_to "Bookings", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link"  %>
+    <% else %>
+      <%= link_to "Rent out", new_user_equipment_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Bookings", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link"  %>
+    <% end %>
 
 
 
@@ -30,7 +39,7 @@
     <% if user_signed_in? %>
     <div class="navbar-wagon-item">
       <div class="dropdown">
-        <%= image_tag(avatar_image_path(current_user), class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown") %>
+        <%= image_tag(avatar_image_path(current_user), width: 30, height: 30, radius: :max, crop: :thumb, gravity: :face,  class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown") %>
 
 
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">

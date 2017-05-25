@@ -1,7 +1,7 @@
 module ApplicationHelper
   def user_image_path(user)
     if user.photo?
-      cl_image_path user.photo, height: 100, width: 100, crop: :fit, gravity: :face
+      cl_image_path user.photo
     else
       ""
     end
@@ -9,7 +9,7 @@ module ApplicationHelper
 
   def equipment_image_path(equipment)
     if equipment.photo?
-      cl_image_path equipment.photo, height: 100, width: 100, crop: :thumb
+      cl_image_path equipment.photo, height: 300, width: 300, crop: :thumb
     else
       ""
     end
