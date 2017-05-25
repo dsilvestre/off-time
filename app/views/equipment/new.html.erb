@@ -1,13 +1,9 @@
-<% content_for(:title_tag) do %>
-  Add your lisiting
-<% end %>
+  <% content_for(:title_tag) do %>
+    Add listing
+  <% end %>
 
-<div class="containter">
-    <h1>Add your listing</h1>
-
-  <%= render "form", equipment: @equipment %>
-
-  <div class="container">
-    <%= link_to 'Back to your profile', current_user %>
-  </div>
+<div class="container">
+      <h1>Add a surfboard</h1>
+      <%= render "form", equipment: @equipment %>
 </div>
+

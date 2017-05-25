@@ -4,7 +4,6 @@
   top: 70px;
   left: 0;
   overflow-y: scroll;
-  background-color: $blue;
   }
 
 .content-right {
@@ -13,5 +12,14 @@
   top: 70px;
   right: 0;
   overflow-y: hidden;
-  background-color: $black;
+}
+
+table {
+  border-right:none;
+  border-bottom:none;
+  border-top: none;
+}
+table td {
+  padding: 10px 10px 10px 0;
+
 }
