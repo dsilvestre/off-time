@@ -2,9 +2,9 @@ class EquipmentController < ApplicationController
   before_action :set_equipment, only: [:show, :edit, :update, :destroy]
 
   def index
-    @flats = Equipment.where.not(latitude: nil, longitude: nil)
+    @equipment = Equipment.where.not(latitude: nil, longitude: nil)
 
-    @hash = Gmaps4rails.build_markers(@flats) do |equipment, marker|
+    @hash = Gmaps4rails.build_markers(@equipment) do |equipment, marker|
       marker.lat equipment.latitude
       marker.lng equipment.longitude
       # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
