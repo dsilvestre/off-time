@@ -2,7 +2,10 @@ class BookingsController < ApplicationController
     before_action :set_booking, only: [:show, :edit, :update, :destroy]
 
   def index
+    @booking = Booking.new
     @bookings = Booking.all
+    @equipment = Equipment.find(params[:equipment_id])
+    @user = @equipment.user
   end
 
   # def show
