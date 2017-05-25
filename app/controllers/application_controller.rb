@@ -8,4 +8,18 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :photo, :photo_cache])
     devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :photo, :photo_cache])
   end
+
+  def search
+    @location = params[:location]
+    @date-search = params[:date-search]
+
+    @equipment = Equipment.all
+
+    if !params[:location].nil? && !params[:location].empty?
+      @equipment = @equipment.where(city: params[:location])
+    end
+    render :search_result
+
+  end
+
 end

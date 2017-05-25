@@ -6,9 +6,11 @@ Rails.application.routes.draw do
     resources :equipment, except: [ :show, :index ]
   end
 
-resources :equipment, only: [ :show, :index ]
+  resources :equipment, only: [ :show, :index ]
 
   root to: 'pages#home'
+
+  get 'search_result', to: 'equipment#search_result'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

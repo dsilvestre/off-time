@@ -53,10 +53,31 @@ class EquipmentController < ApplicationController
     end
   end
 
+  def search_result
+
+    @location = params[:location]
+    @datesearch = params[:datesearch]
+
+    @equipment = Equipment.all
+
+
+
+    if params[:location].present? && !params[:location].empty?
+      @equipment = Equipment.near(params[:location], 20)
+    end
+# byebug
+    # if
+      # check if the start_date and end_date are outside of other bookings
+
+    # end
+    render :search_result
+
+  end
+
   private
 
   def equipment_params
-    params.require(:equipment).permit(:title, :photo, :photo_cache, :price, :country, :city, :postal_code, :street, :building_number, :category, :user_id)
+    params.require(:equipment).permit(:title, :photo, :photo_cache, :price, :country, :city, :postal_code, :street, :building_number, :category, :user_id, :location, :search_daterange)
   end
 
   def set_equipment
