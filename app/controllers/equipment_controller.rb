@@ -34,9 +34,24 @@ class EquipmentController < ApplicationController
   end
 
   def update
+    @equipment = Equipment.new(equipment_params)
+    respond_to do |format|
+      if @equipment.save
+        format.html { redirect_to @equipment, notice: 'Surfboard was successfully created.' }
+        format.json { render :show, status: :created, location: @equipment }
+      else
+        format.html { render :new }
+        format.json { render json: @equipment.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def destroy
+    @equipment.destroy
+    respond_to do |format|
+      format.html { redirect_to equipments_url, notice: 'Surfboard was successfully deleted.' }
+      format.json { head :no_content }
+    end
   end
 
   private
