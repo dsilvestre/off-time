@@ -29,6 +29,8 @@
         <td><h5><%= @equipment.street %> <%= @equipment.building_number %><br> <%= @equipment.postal_code  %>&nbsp;<%=@equipment.city %> <br><%= @equipment.country  %></h5></td>
       </tr>
     </table>
+    <%= link_to "Edit", edit_user_equipment_path(@equipment), class: "btn btn-primary"  %>
+    <%= link_to "Delete", user_equipment_path(@equipment), class: "btn btn-primary" %>
   </div>
 
 
