@@ -1,9 +1,12 @@
 .card {
-  height: 175px;
+  height: 200px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   color: white;
   position: relative;
+  &:hover {
+    opacity: 0.9;
+  }
 }
 .card-user {
   position: absolute;
@@ -13,8 +16,8 @@
 .card-category {
   position: absolute;
   top: 10px;
-  left: 10px;
-  font-size: 10px;
+  right: 10px;
+  font-size: 13px;
   text-transform: uppercase;
 }
 .card-description {
@@ -23,7 +26,7 @@
   left: 10px;
 }
 .card-description h2 {
-  font-size: 24px;
+  font-size: 18px;
 }
 .card-description p {
   font-size: 13px;
@@ -40,4 +43,14 @@
 }
 .card-link:hover{
   opacity: 0.1;
+}
+
+h3 a {
+  margin-left: 20px;
+  color: black;
+  text-decoration: none;
+  &:hover {
+  opacity: 0.9;
+  text-decoration: none;
+}
 }
