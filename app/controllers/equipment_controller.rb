@@ -1,10 +1,6 @@
 class EquipmentController < ApplicationController
   before_action :set_equipment, only: [:show, :edit, :update, :destroy]
 
-  def home
-    @equipment = Equipment.all
-  end
-
   def index
     @equipment = Equipment.where.not(latitude: nil, longitude: nil)
 
