@@ -6,7 +6,9 @@ Rails.application.routes.draw do
     resources :equipment, except: [ :show, :index ]
   end
 
-resources :equipment, only: [ :show, :index ]
+  resources :equipment, only: [ :show, :index ] do
+    resources :bookings
+  end
 
   root to: 'pages#home'
 
