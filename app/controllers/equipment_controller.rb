@@ -66,9 +66,26 @@ class EquipmentController < ApplicationController
 
 
     if params[:location].present? && !params[:location].empty?
-      @equipment = Equipment.near(params[:location], 20)
+      @equipment = @equipment.near(params[:location], 20)
     end
-# byebug
+
+    if params[:search_daterange].present? && !params[:search_daterange].empty?
+      start_date = params[:search_daterange].split(" - ")[0]
+      end_date = params[:search_daterange].split(" - ")[1]
+      @result = []
+      @equipment.each do |equipment|
+        equipment.bookings.each do |booking|
+          unless
+            start_date > booking.start_date && start_date < booking.end_date && end_date > booking.start_date && end_date < booking.end_date
+          @result << equipment # (iterate and do whatever)
+          end
+        end
+      end
+
+    end
+
+
+
     # if
       # check if the start_date and end_date are outside of other bookings
 
