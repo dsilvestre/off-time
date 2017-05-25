@@ -71,8 +71,8 @@ class EquipmentController < ApplicationController
 
       byebug
     if params[:search_daterange].present? && !params[:search_daterange].empty?
-      start_date = Date.parse(params[:search_daterange].split(" - ")[0])
-      end_date = Date.parse(params[:search_daterange].split(" - ")[1])
+      start_date = DateTime.strptime(params[:search_daterange].split(" - ")[0], "%m/%d/%Y")
+      end_date = DateTime.strptime(params[:search_daterange].split(" - ")[1], "%m/%d/%Y")
       @result = []
       @equipment.each do |equipment|
         equipment.bookings.each do |booking|
