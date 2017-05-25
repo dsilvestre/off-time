@@ -23,7 +23,7 @@ class EquipmentController < ApplicationController
     @equipment = Equipment.new(equipment_params)
 
     if @equipment.save
-      redirect_to current_user
+      redirect_to user_path(@equipment)
 
     else
       render :new
@@ -46,6 +46,11 @@ class EquipmentController < ApplicationController
   end
 
   def destroy
+    @equipment.destroy
+    respond_to do |format|
+      format.html { redirect_to user_path(@equipment), notice: 'Surfboard was successfully deleted.' }
+      format.json { head :no_content }
+    end
   end
 
   private
