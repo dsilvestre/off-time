@@ -34,6 +34,15 @@ class EquipmentController < ApplicationController
   end
 
   def update
+    respond_to do |format|
+      if @equipment.update(equipment_params)
+       format.html { redirect_to @equipment, notice: 'Your surfboard was successfully updated.' }
+       format.json { render :show, status: :ok, location: @equipment }
+      else
+       format.html { render :edit }
+       format.json { render json: @equipment.errors, status: :unprocessable_entity }
+     end
+   end
   end
 
   def destroy
