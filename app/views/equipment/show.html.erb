@@ -30,7 +30,7 @@
       </tr>
     </table>
     <%= link_to 'Edit', edit_user_equipment_path(@equipment), class: "btn btn-primary" %>
-    <%= link_to 'Delete', user_equipment_path(@equipment), class: "btn btn-primary" %>
+    <%= link_to "Delete", user_equipment_path(@equipment), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary" %>
     <%= link_to 'Back', user_path(@equipment), class: "btn btn-primary" %>
   </div>
 
