@@ -1,9 +1,10 @@
 .card {
-  height: 200px;
+  height: 300px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   color: white;
   position: relative;
+  margin-top: 20px;
   &:hover {
     opacity: 0.9;
   }
@@ -22,9 +23,10 @@
 }
 .card-description {
   position: absolute;
-  bottom: 10px;
+  top: 210px;
   left: 10px;
 }
+
 .card-description h2 {
   font-size: 18px;
 }
@@ -54,6 +56,4 @@ h3 a {
   text-decoration: none;
 }
 }
-.image {
-  height: 200px;
-}
+
