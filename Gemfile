@@ -54,6 +54,7 @@ gem 'faker'
 
 # Stripe
 gem 'coffee-script'
+gem 'money-rails'
 
 group :production do
   gem 'rails_12factor'
