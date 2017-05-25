@@ -264,6 +264,7 @@ DEPENDENCIES
   carrierwave (~> 0.11.2)
   cloudinary
   coffee-rails
+  coffee-script
   devise
   faker
   figaro
