@@ -2,9 +2,9 @@ class EquipmentController < ApplicationController
   before_action :set_equipment, only: [:show, :edit, :update, :destroy]
 
   def index
-    @flats = Equipment.where.not(latitude: nil, longitude: nil)
+    @equipment = Equipment.where.not(latitude: nil, longitude: nil)
 
-    @hash = Gmaps4rails.build_markers(@flats) do |equipment, marker|
+    @hash = Gmaps4rails.build_markers(@equipment) do |equipment, marker|
       marker.lat equipment.latitude
       marker.lng equipment.longitude
       # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
@@ -34,16 +34,15 @@ class EquipmentController < ApplicationController
   end
 
   def update
-    @equipment = Equipment.new(equipment_params)
     respond_to do |format|
-      if @equipment.save
-        format.html { redirect_to @equipment, notice: 'Surfboard was successfully created.' }
-        format.json { render :show, status: :created, location: @equipment }
+      if @equipment.update(equipment_params)
+       format.html { redirect_to @equipment, notice: 'Your surfboard was successfully updated.' }
+       format.json { render :show, status: :ok, location: @equipment }
       else
-        format.html { render :new }
-        format.json { render json: @equipment.errors, status: :unprocessable_entity }
-      end
-    end
+       format.html { render :edit }
+       format.json { render json: @equipment.errors, status: :unprocessable_entity }
+     end
+   end
   end
 
   def destroy
