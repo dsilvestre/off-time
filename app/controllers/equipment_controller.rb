@@ -69,10 +69,10 @@ class EquipmentController < ApplicationController
       @equipment = @equipment.near(params[:location], 20)
     end
 
-      byebug
     if params[:search_daterange].present? && !params[:search_daterange].empty?
       start_date = DateTime.strptime(params[:search_daterange].split(" - ")[0], "%m/%d/%Y")
       end_date = DateTime.strptime(params[:search_daterange].split(" - ")[1], "%m/%d/%Y")
+    byebug
       @result = []
       @equipment.each do |equipment|
         equipment.bookings.each do |booking|
