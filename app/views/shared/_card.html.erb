@@ -1,0 +1,18 @@
+ <h3><strong><%= link_to "Recently Booked", equipment_index_path%></strong></h3>
+
+   <% @equipment.each do |equipment|%>
+    <%= link_to equipment do %>
+      <div class="col-xs-12 col-sm-3 col-md-2">
+        <div class="card-wrapper">
+         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= equipment_image_path(equipment) %>');">
+
+          <div class="card-category">
+            <p><%= equipment.category %></p>
+          </div>
+          <div class="card-description"><h2><strong><%= equipment.price %> € / day</strong> &nbsp;- <%= equipment.title %> <br></h2>
+              </div>
+          </div>
+         </div>
+       </div>
+      <% end %>
+    <% end %>

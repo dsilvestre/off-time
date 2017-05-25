@@ -1,16 +1,18 @@
 <%= simple_form_for [current_user, equipment] do |f| %>
 <%= f.error_notification %>
-    <div class="form-inputs ">
+    <div class="form-inputs">
 
-
-      <%= f.input :title, :label => "Title", :placeholder => "Great surfboard right at the coast"  %>
+      <%= f.input :title, :label => "Title", :placeholder => "Great Rip Curl Surfboard"  %>
+      <br>
       <%= f.input :category, prompt: "(Select from the list)", :collection => @categories, :class => "form-input" %>
+      <br>
       <%= f.input :price, :label => "Price (€ / day)", :placeholder => "12" %>
-      <%= f.input :country, :as => :string, :label => "Address", :placeholder => "Portugal" %>
-      <%= f.input :postal_code, :label => false, :placeholder => "1170-347" %>
+      <br>
+      <%= f.input :street, :label => false, :label => "Address",:placeholder => "Avenida Casal Ribeiro" %>
+      <%= f.input :building_number, :label => false, :placeholder => "28"  %>
+      <%= f.input :postal_code, :label => false, :placeholder => "1000-092" %>
       <%= f.input :city, :label => false, :placeholder => "Lisbon" %>
-      <%= f.input :street, :label => false, :placeholder => "rua Bernadim Ribeiro" %>
-      <%= f.input :building_number, :label => false, :placeholder => "43"  %>
+      <%= f.input :country, :as => :string, :label => false, :placeholder => "Portugal" %>
 
       <%= f.input :photo %>
       <%= f.input :photo_cache, as: :hidden %>

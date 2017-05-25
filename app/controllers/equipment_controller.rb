@@ -7,11 +7,14 @@ class EquipmentController < ApplicationController
     @hash = Gmaps4rails.build_markers(@equipment) do |equipment, marker|
       marker.lat equipment.latitude
       marker.lng equipment.longitude
-      # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
     end
   end
 
   def show
+    @hash = Gmaps4rails.build_markers(@equipment) do |equipment, marker|
+      marker.lat equipment.latitude
+      marker.lng equipment.longitude
+    end
   end
 
   def new
