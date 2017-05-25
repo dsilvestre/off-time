@@ -8,15 +8,16 @@
     <% end %>
 
   <!-- Search form -->
-  <form action="" class="navbar-wagon-search form-inline">
-    <input type="text" class="navbar-wagon-search-input location-search" placeholder="Anywhere">
+  <form action="/search_result" method="get" class="date-search form-inline">
+  <!-- <form action="" class="navbar-wagon-search form-inline"> -->
+    <input type="text" class="navbar-wagon-search-input location-search" placeholder="Anywhere" name="location" value="<%= @location %>">
 
-    <form action="" class="navbar-wagon-search-input date-search">
-      <input type="text" name="search-daterange" class="navbar-wagon-search-input location-search" placeholder="Anytime">
+      <input type="text" name="search_daterange" class="navbar-wagon-search-input location-search" placeholder="Anytime" value="<%= @datesearch %>">
     <button type="submit" class="btn btn-search"><i class="fa fa-search"></i> </button>
-    </form>
+
 
   </form>
+
 
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
@@ -69,7 +70,7 @@
 <% content_for (:js) do %>
 <script type="text/javascript">
   $(function() {
-    $('input[name="search-daterange"]').daterangepicker();
+    $('input[name="search_daterange"]').daterangepicker();
 });
   </script>
   <% end %>

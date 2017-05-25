@@ -4,4 +4,18 @@ class PagesController < ApplicationController
   def home
     @equipment = Equipment.all
   end
+  end
+
+  def search
+    @location = params[:location]
+    @date-search = params[:date-search]
+
+    @equipment = Equipment.all
+
+    if !params[:location].nil? && !params[:location].empty?
+      @equipment = @equipment.where(city: params[:location])
+    end
+    render :search_result
+
+
 end
