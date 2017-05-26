@@ -52,6 +52,7 @@ My Profile
           <p><%= equipment.price %>€ / day</p>
           <% end %>
           </td>
+          </tr>
         <% end %>
       </table>
 
@@ -63,9 +64,13 @@ My Profile
         <p class="text-center">You have no upcoming bookins</p>
       <% else  %>
         <table align="left">
+          <tr>
           <% current_user.seller_bookings.each do |booking| %>
-
-            <%= booking.start_date %>
+            <td><%= cl_image_tag(equipment_image_path(booking.equipment)) %></td>
+            <td><h3><%= booking.buyer.first_name %></h3>
+            Arrives on <%= booking.start_date %>
+            <br>Returns your board on <%= booking.end_date %></td>
+          </tr>
           <% end %>
         </table>
       <% end %>
