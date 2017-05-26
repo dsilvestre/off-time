@@ -72,7 +72,7 @@ class EquipmentController < ApplicationController
     if params[:search_daterange].present? && !params[:search_daterange].empty?
       start_date = DateTime.strptime(params[:search_daterange].split(" - ")[0], "%m/%d/%Y")
       end_date = DateTime.strptime(params[:search_daterange].split(" - ")[1], "%m/%d/%Y")
-    byebug
+    # byebug
       @result = []
       @equipment.each do |equipment|
         equipment.bookings.each do |booking|
@@ -86,8 +86,12 @@ class EquipmentController < ApplicationController
 
     end
 
+    @hash = Gmaps4rails.build_markers(@equipment) do |equipment, marker|
+      marker.lat equipment.latitude
+      marker.lng equipment.longitude
+    end
 
-
+    # byebug
     # if
       # check if the start_date and end_date are outside of other bookings
 
