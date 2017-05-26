@@ -6,3 +6,4 @@
     tagline: Faker::Company.catch_phrase
   )
 end
+

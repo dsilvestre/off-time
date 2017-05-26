@@ -1,3 +1,5 @@
+require 'date'
+
 class BookingsController < ApplicationController
     before_action :set_booking, only: [:show, :edit, :update, :destroy]
 
@@ -44,6 +46,10 @@ class BookingsController < ApplicationController
 
   # def destroy
   # end
+
+  def date_calc(start_date, end_date) # returns Int
+    (end_date.to_date - start_date.to_date).to_i + 1 #Format: => #<DateTime: 2017-05-26T12:36:01+01:00 ((2457900j,41761s,367517000n),+3600s,2299161j)>
+  end
 
   private
 
