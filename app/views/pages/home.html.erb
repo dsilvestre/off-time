@@ -5,3 +5,16 @@ Off Time: Never Miss A Wave
 <%= render 'shared/banner'  %>
 
 <%= render 'shared/card' %>
+
+<%= content_for(:after_js) do %>
+  <script>
+    $(document).ready(function() {
+      $('.card').on('click', function() {
+        var city = $(this).text().trim();
+        $('.location-search:first-child').val(city);
+        $('.date-search').submit();
+      });
+    });
+  </script>
+<% end %>
+
