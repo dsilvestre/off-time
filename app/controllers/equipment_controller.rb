@@ -63,6 +63,10 @@ class EquipmentController < ApplicationController
 
     @equipment = Equipment.all
 
+    @hash = Gmaps4rails.build_markers(@equipment) do |equipment, marker|
+      marker.lat equipment.latitude
+      marker.lng equipment.longitude
+    end
 
 
     if params[:location].present? && !params[:location].empty?
@@ -86,10 +90,6 @@ class EquipmentController < ApplicationController
 
     end
 
-    @hash = Gmaps4rails.build_markers(@equipment) do |equipment, marker|
-      marker.lat equipment.latitude
-      marker.lng equipment.longitude
-    end
 
     # byebug
     # if
