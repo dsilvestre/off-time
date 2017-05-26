@@ -4,15 +4,15 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-md-6">
-        <h1>Search results</h1>
+      <div class="col-md-6 content-left">
+        <h3>Check the <%= @equipment.length %> surfboards in <%= params[:location] %> we found for you:</h3>
         <table class="table">
           <% @equipment.each do |equipment| %>
           <tr>
             <td><%= link_to equipment_path(equipment) do %>
               <%= image_tag(equipment_image_path(equipment), width: 150) %> </td>
               <% end %>
-              <td><h4> <%= equipment.title %> </h4><p> </p> <p> <%= equipment.category %></p> <p> </p> <p> <%= equipment.price %> € / day</p> <p> </p> <span> <%= equipment.street %> <%= equipment.building_number %>,  <%= equipment.city %></span>
+              <td><h4> <%= equipment.title %> </h4><p> <%= equipment.category %></p><p><%= equipment.price %> € / day</p><span> <%= equipment.street %> <%= equipment.building_number %>,  <%= equipment.city %></span>
               </td>
             </tr>
             <% end %>
@@ -20,7 +20,7 @@
         </div>
 
 
-      <div class="col-md-6">
+      <div class="col-md-6 content-right">
         <div id="map" style="width: 100%; height: calc(100vh - 70px)">
         <%= render "shared/maps", location: @hash %></div>
      </div>
