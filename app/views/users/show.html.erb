@@ -29,6 +29,8 @@ My Profile
             <td><h5><%= current_user.email %></h5></td>
           </tr>
 
+
+
         </table>
 
         <br>
@@ -57,11 +59,11 @@ My Profile
       </table>
 
 
-      <h4 class="text-center">Your Upcoming bookings</h4 class="text-center">
+      <h4 class="text-center">Your Upcoming Bookings</h4 class="text-center">
 
 
       <% if current_user.seller_bookings.empty?  %>
-        <p class="text-center">You have no upcoming bookins</p>
+        <p class="text-center">You have no upcoming bookings</p>
       <% else  %>
         <table align="left">
           <tr>

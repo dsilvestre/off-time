@@ -5,7 +5,14 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 content-left">
-        <h3>Check the <%= @equipment.length %> surfboards in <%= params[:location] %> we found for you:</h3>
+        <% if @equipment.length == 0 %>
+          <h3>No surfboards in this location yet :-(</h3>
+        <% elsif @equipment.length == 1 %>
+          <h3>Check this amazing board we found for you:</h3>
+
+        <% else %>
+          <h3>Check the <%= @equipment.length %> surfboards in <%= params[:location] %> we found for you:</h3>
+        <% end %>
         <table class="table">
           <% @equipment.each do |equipment| %>
           <tr>
