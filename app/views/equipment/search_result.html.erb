@@ -5,7 +5,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 content-left">
-        <h1>Search results</h1>
+        <h3>Check the <%= @equipment.length %> surfboards in <%= params[:location] %> we found for you:</h3>
         <table class="table">
           <% @equipment.each do |equipment| %>
           <tr>
