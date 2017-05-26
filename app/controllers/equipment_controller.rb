@@ -72,6 +72,9 @@ class EquipmentController < ApplicationController
 
     if params[:location].present? && !params[:location].empty?
       @equipment = @equipment.near(params[:location], 20)
+      @hash = Gmaps4rails.build_markers(@equipment) do |equipment, marker|
+      marker.lat equipment.latitude
+      marker.lng equipment.longitude
     end
 
     if params[:search_daterange].present? && !params[:search_daterange].empty?
@@ -88,6 +91,9 @@ class EquipmentController < ApplicationController
         end
       end
       @equipment = @result
+      @hash = Gmaps4rails.build_markers(@equipment) do |equipment, marker|
+      marker.lat equipment.latitude
+      marker.lng equipment.longitude
 
     end
 
