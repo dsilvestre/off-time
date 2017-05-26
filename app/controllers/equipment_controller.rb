@@ -84,10 +84,16 @@ class EquipmentController < ApplicationController
     # byebug
       @result = []
       @equipment.each do |equipment|
-        equipment.bookings.each do |booking|
-          unless
-            start_date > booking.start_date && start_date < booking.end_date && end_date > booking.start_date && end_date < booking.end_date
-            @result << equipment # (iterate and do whatever)
+        if equipment.bookings.empty?
+          @result << equipment
+        else
+          equipment.bookings.each do |booking|
+            unless
+              start_date > booking.start_date && start_date < booking.end_date && end_date > booking.start_date && end_date < booking.end_date
+              if !@result.include?(equipment)
+                @result << equipment # (iterate and do whatever)
+              end # code to be improved
+            end
           end
         end
       end
