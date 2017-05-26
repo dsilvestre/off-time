@@ -75,6 +75,7 @@ class EquipmentController < ApplicationController
       @hash = Gmaps4rails.build_markers(@equipment) do |equipment, marker|
       marker.lat equipment.latitude
       marker.lng equipment.longitude
+      end
     end
 
     if params[:search_daterange].present? && !params[:search_daterange].empty?
@@ -94,6 +95,7 @@ class EquipmentController < ApplicationController
       @hash = Gmaps4rails.build_markers(@equipment) do |equipment, marker|
       marker.lat equipment.latitude
       marker.lng equipment.longitude
+      end
 
     end
 
