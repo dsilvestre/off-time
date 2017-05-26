@@ -69,6 +69,7 @@ class EquipmentController < ApplicationController
     end
 
 
+
     if params[:location].present? && !params[:location].empty?
       @equipment = @equipment.near(params[:location], 20)
     end
@@ -90,12 +91,6 @@ class EquipmentController < ApplicationController
 
     end
 
-
-    # byebug
-    # if
-      # check if the start_date and end_date are outside of other bookings
-
-    # end
     render :search_result
 
   end
