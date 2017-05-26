@@ -55,6 +55,32 @@ My Profile
   <% end %>
 </table>
 
+
+<h4 class="text-center">Your Upcoming bookings</h4 class="text-center">
+
+<table align="left">
+
+  <% if current_user.seller_bookings.empty?  %>
+    <p class="text-center">You have no upcoming bookins</p>
+  <% else  %>
+    <% equipment.bookings.each do |booking| %>
+      <%= booking.seller.first_name %>
+    <% end %>
+
+  <tr>
+    <!-- <td class="table-field"><%= link_to equipment_path(equipment) do %> -->
+    <%= cl_image_tag(equipment_image_path(equipment)) %>
+    <%= image_tag(equipment_image_path(current_user), width: 150) %>
+    </td>
+
+    <% end %>
+    </td>
+  <% end %>
+</table>
+
+
+
+
 </div>
 
       </div>
