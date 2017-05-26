@@ -24,10 +24,10 @@
     <!-- Text link -->
     <% if !user_signed_in? %>
        <%= link_to "Rent out", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link"  %>
-       <%= link_to "Bookings", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link"  %>
+       <%= link_to "My Bookings", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link"  %>
     <% else %>
       <%= link_to "Rent out", new_user_equipment_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Bookings", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link"  %>
+      <%= link_to "My Bookings", "#", class: "navbar-wagon-item navbar-wagon-link"  %>
     <% end %>
     <!-- Profile picture and dropdown -->
     <% if user_signed_in? %>
