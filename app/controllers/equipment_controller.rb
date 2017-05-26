@@ -57,7 +57,7 @@ class EquipmentController < ApplicationController
   end
 
   def search_result
-
+    @fix_nav = true
     @location = params[:location]
     @datesearch = params[:datesearch]
 
