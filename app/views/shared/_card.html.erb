@@ -1,21 +1,33 @@
  <div class="container">
 
-   <h3><strong><%= link_to "Recently Booked", equipment_index_path%></strong></h3>
+   <h3><strong><%= link_to "Cities", equipment_index_path%></strong></h3>
 
-   <% @equipment.each do |equipment|%>
-   <%= link_to equipment do %>
-   <div class="col-xs-12 col-sm-3 col-md-2">
-    <div class="card-wrapper">
-     <div class="card surfboard-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= equipment_image_path(equipment) %>');">
-
-      <div class="card-category">
-        <p><%= equipment.category %></p>
+   <div class="row">
+     <div class="col-xs-12 col-sm-6 col-md-4">
+       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://static.pexels.com/photos/31737/pexels-photo.jpg');">
+        <div class="card-category text-center">
+          <h2>Lisbon</h2>
+        </div>
       </div>
-      <div class="card-description"><h2><strong><%= equipment.price %> € / day</strong> &nbsp;- <%= equipment.title %> <br></h2>
+    </div>
+
+
+    <div class="col-xs-12 col-sm-6 col-md-4">
+     <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://static.pexels.com/photos/161212/rio-de-janeiro-olympics-2016-niteroi-brazil-161212.jpeg');">
+        <div class="card-category text-center">
+        <h2>Rio de Janeiro</h2>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://static.pexels.com/photos/136190/pexels-photo-136190.jpeg');">
+        <div class="card-category">
+          <h2>Barcelona</h2>
+       </div>
       </div>
     </div>
   </div>
 </div>
-<% end %>
-<% end %>
-</div>
+
