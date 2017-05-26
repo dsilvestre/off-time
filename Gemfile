@@ -52,6 +52,10 @@ gem 'letter_opener', group: :development
 
 gem 'faker'
 
+# Stripe
+gem 'coffee-script'
+gem 'money-rails'
+
 group :production do
   gem 'rails_12factor'
 end
